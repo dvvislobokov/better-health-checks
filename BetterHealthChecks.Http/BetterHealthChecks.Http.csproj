@@ -3,14 +3,11 @@
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
         <Nullable>enable</Nullable>
+        <RootNamespace>HealthChecks.Http</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\HealthChecks.Core\HealthChecks.Core.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <PackageReference Include="Confluent.Kafka" Version="1.9.3" />
+      <ProjectReference Include="..\BetterHealthChecks.Core\BetterHealthChecks.Core.csproj" />
     </ItemGroup>
 
 </Project>

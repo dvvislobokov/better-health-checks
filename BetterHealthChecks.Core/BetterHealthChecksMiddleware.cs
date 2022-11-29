@@ -1,20 +1,23 @@
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 
-namespace HealthChecks.Core
+namespace BetterHealthChecks.Core
 {
-    public interface IHealthChecksMiddleware
+
+    public interface IBetterHealthChecksMiddleware
     {
         Task InvokeAsync(HttpContext context);
     }
     
-    public class HealthChecksMiddleware : IHealthChecksMiddleware
+    public class BetterHealthChecksMiddleware : IBetterHealthChecksMiddleware
     {
         private readonly RequestDelegate _requestDelegate;
         private readonly IHealthCheckService _healthCheckService;
 
-        public HealthChecksMiddleware(RequestDelegate requestDelegate, IHealthCheckService healthCheckService)
+        public BetterHealthChecksMiddleware(RequestDelegate requestDelegate, IHealthCheckService healthCheckService)
         {
             _requestDelegate = requestDelegate;
             _healthCheckService = healthCheckService;
@@ -24,7 +27,11 @@ namespace HealthChecks.Core
         {
             context.Response.Headers.ContentType = "application/json";
             var res = await _healthCheckService.CheckHealth(CancellationToken.None);
-            await context.Response.WriteAsJsonAsync(res);
+            context.Response.StatusCode = _healthCheckService.GetStatusCode();
+            await context.Response.WriteAsync(JsonSerializer.Serialize(res, new JsonSerializerOptions()
+            {
+                Converters = { new JsonStringEnumConverter() }
+            }));
         }
     }
 }

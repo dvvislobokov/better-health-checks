@@ -1,10 +1,10 @@
 using System.Threading;
 using System.Threading.Tasks;
-using HealthChecks.Core.Models;
+using BetterHealthChecks.Core.Models;
 
-namespace HealthChecks.Core
+namespace BetterHealthChecks.Core
 {
-    public interface IHealthCheck
+    public interface IBetterHealthCheck
     {
         public string Name { get; set; }
         Task<HealthCheckResult> ExecuteAsync(CancellationToken cancellationToken);

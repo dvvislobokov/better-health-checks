@@ -1,6 +1,6 @@
 using System;
 
-namespace HealthChecks.Core.Models
+namespace BetterHealthChecks.Core.Models
 {
     public enum HealthStatus
     {

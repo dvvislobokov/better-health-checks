@@ -11,8 +11,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\HealthChecks.Core\HealthChecks.Core.csproj" />
-      <ProjectReference Include="..\HealthChecks.Kafka\HealthChecks.Kafka.csproj" />
+      <ProjectReference Include="..\BetterHealthChecks.Core\BetterHealthChecks.Core.csproj" />
+      <ProjectReference Include="..\BetterHealthChecks.Http\BetterHealthChecks.Http.csproj" />
+      <ProjectReference Include="..\BetterHealthChecks.Kafka\BetterHealthChecks.Kafka.csproj" />
     </ItemGroup>
 
 </Project>

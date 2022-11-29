@@ -2,13 +2,13 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthChecks", "HealthChecks\HealthChecks.csproj", "{0515EFF3-AD9D-4D98-9649-D2051F2E5B42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthChecks.Kafka", "HealthChecks.Kafka\HealthChecks.Kafka.csproj", "{77586435-E6F0-43C7-9B74-04CB4EF8A048}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterHealthChecks.Kafka", "BetterHealthChecks.Kafka\BetterHealthChecks.Kafka.csproj", "{77586435-E6F0-43C7-9B74-04CB4EF8A048}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthChecks.Core", "HealthChecks.Core\HealthChecks.Core.csproj", "{87A44457-55C2-49E9-B461-DC56A32AAE85}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterHealthChecks.Core", "BetterHealthChecks.Core\BetterHealthChecks.Core.csproj", "{87A44457-55C2-49E9-B461-DC56A32AAE85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthChecks.PostgreSQL", "HealthChecks.PostgreSQL\HealthChecks.PostgreSQL.csproj", "{85FDA810-40B5-4166-9985-DB939BA17E27}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterHealthChecks.PostgreSQL", "BetterHealthChecks.PostgreSQL\BetterHealthChecks.PostgreSQL.csproj", "{85FDA810-40B5-4166-9985-DB939BA17E27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthChecks.Http", "HealthChecks.Http\HealthChecks.Http.csproj", "{2FC06923-F4BF-41D3-861C-7C997B327543}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterHealthChecks.Http", "BetterHealthChecks.Http\BetterHealthChecks.Http.csproj", "{2FC06923-F4BF-41D3-861C-7C997B327543}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

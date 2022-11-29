@@ -1,4 +1,4 @@
-namespace HealthChecks.Kafka
+namespace BetterHealthChecks.Kafka
 {
     public class KafkaConfig
     {
