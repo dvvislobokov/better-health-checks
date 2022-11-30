@@ -18,10 +18,10 @@ builder.Services
     {
         x.Add(new KafkaHealthCheck(new KafkaConfig("localhost:9092"), "Kafka-Local"));
         x.Add(new HttpHealthCheck("Google", new HttpConfig("https://google.com", HttpMethod.Get, TimeSpan.FromSeconds(300)), false));
-        x.Add(new PostgresHealthCheck("Server=localhost;Port=5434;Database=oslms;User Id=postgres;Password=pwd;Pooling=true;Minimum Pool Size=0;Maximum Pool Size=100;", TimeSpan.FromSeconds(10), null ));
+        x.Add(new PostgresHealthCheck("Server=localhost;Port=5434;Database=database;User Id=postgres;Password=pwd;Pooling=true;Minimum Pool Size=0;Maximum Pool Size=100;", TimeSpan.FromSeconds(10), null ));
         x.Add(new IgniteHealthCheck("Ignite-Local", "localhost:10800"));
         return x;
-    }, x=>x.Count(z=>z.Status==HealthStatus.Unhealthy)==1 ? 400 : 200);
+    });
 
 var app = builder.Build();
 

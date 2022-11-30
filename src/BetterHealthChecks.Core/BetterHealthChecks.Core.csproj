@@ -3,9 +3,14 @@
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
         <Nullable>enable</Nullable>
-        <PackageTags>$(PackageTags);Health;Healthcheck;Check;Core;Better;BetterHealth;BetterHealthChecks</PackageTags>
+        <PackageTags>Health;Healthcheck;Check;Core;Better;BetterHealth;BetterHealthChecks</PackageTags>
         <Description>Core package for better healthchecks. It's like healthcheck but better</Description>
         <VersionPrefix>$(Version)</VersionPrefix>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/dvvislobokov/better-health-checks.git</PackageProjectUrl>
+        <Owners>Denis Vislobokov</Owners>
+        <Authors>Denis Vislobokov</Authors>
+        <Copyright>Copyright 2022</Copyright>
     </PropertyGroup>
     
     <ItemGroup>
