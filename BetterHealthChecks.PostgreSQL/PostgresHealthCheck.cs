@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using BetterHealthChecks.Core;
 using BetterHealthChecks.Core.Models;
+using Npgsql;
 
 namespace BetterHealthChecks.PostgreSQL
 {
@@ -22,14 +23,38 @@ namespace BetterHealthChecks.PostgreSQL
             _connectionString = connectionString;
         }
 
-        public Task<HealthCheckResult> ExecuteAsync(CancellationToken cancellationToken)
+        public async Task<HealthCheckResult> ExecuteAsync(CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            using var duration = new Duration();
+            try
+            {
+                await using var sqlConnection = new NpgsqlConnection(_connectionString);
+                await sqlConnection.OpenAsync(cancellationToken);
+                await using var command = sqlConnection.CreateCommand();
+                command.CommandText = string.IsNullOrEmpty(_customQuery) ? "SELECT 1;" : _customQuery;
+                command.CommandTimeout = _timeout == TimeSpan.Zero ? 30 : (int)_timeout.TotalSeconds;
+                await command.ExecuteNonQueryAsync(cancellationToken);
+                return new HealthCheckResult()
+                {
+                    Name = Name,
+                    Duration = duration.GetDuration(),
+                    Status = HealthStatus.Health
+                };
+            }
+            catch (Exception e)
+            {
+                return new HealthCheckResult()
+                {
+                    Name = Name,
+                    Duration = duration.GetDuration(),
+                    Exception = e.Message,
+                    Status = HealthStatus.Unhealthy
+                };
+            }
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
         }
     }
 }

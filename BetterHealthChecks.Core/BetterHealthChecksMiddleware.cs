@@ -25,7 +25,7 @@ namespace BetterHealthChecks.Core
 
         public async Task InvokeAsync(HttpContext context)
         {
-            context.Response.Headers.ContentType = "application/json";
+            context.Response.Headers.Add("ContentType", "application/json");
             var res = await _healthCheckService.CheckHealth(CancellationToken.None);
             context.Response.StatusCode = _healthCheckService.GetStatusCode();
             await context.Response.WriteAsync(JsonSerializer.Serialize(res, new JsonSerializerOptions()

@@ -3,11 +3,14 @@
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
         <Nullable>enable</Nullable>
-        <RootNamespace>HealthChecks.Http</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\BetterHealthChecks.Core\BetterHealthChecks.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Apache.Ignite" Version="2.14.0" />
     </ItemGroup>
 
 </Project>

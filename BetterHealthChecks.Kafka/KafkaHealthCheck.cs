@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Confluent.Kafka;
 using BetterHealthChecks.Core;
 using BetterHealthChecks.Core.Models;
-using Confluent.Kafka.Admin;
 
 namespace BetterHealthChecks.Kafka
 {
@@ -32,15 +31,10 @@ namespace BetterHealthChecks.Kafka
 
         public async Task<HealthCheckResult> ExecuteAsync(CancellationToken cancellationToken)
         {
-            using var adminClient = new AdminClientBuilder(new AdminClientConfig {BootstrapServers = _producerConfig.BootstrapServers}).Build();
-            try
+            using (var adminClient = new AdminClientBuilder(new AdminClientConfig
+                       { BootstrapServers = _producerConfig.BootstrapServers }).Build())
             {
-                await adminClient.CreateTopicsAsync(new[] { 
-                    new TopicSpecification { Name = _topic, ReplicationFactor = 1, NumPartitions = 1 } });
-            }
-            catch (CreateTopicsException e)
-            {
-                Console.WriteLine($"An error occured creating topic {e.Results[0].Topic}: {e.Results[0].Error.Reason}");
+                await adminClient.TryCreateKafkaTopicsAsync(1, _topic);
             }
 
             using var producer = new ProducerBuilder<string, string>(_producerConfig).Build();

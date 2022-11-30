@@ -13,7 +13,9 @@
     <ItemGroup>
       <ProjectReference Include="..\BetterHealthChecks.Core\BetterHealthChecks.Core.csproj" />
       <ProjectReference Include="..\BetterHealthChecks.Http\BetterHealthChecks.Http.csproj" />
+      <ProjectReference Include="..\BetterHealthChecks.Ignite\BetterHealthChecks.Ignite.csproj" />
       <ProjectReference Include="..\BetterHealthChecks.Kafka\BetterHealthChecks.Kafka.csproj" />
+      <ProjectReference Include="..\BetterHealthChecks.PostgreSQL\BetterHealthChecks.PostgreSQL.csproj" />
     </ItemGroup>
 
 </Project>

@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterHealthChecks.PostgreS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterHealthChecks.Http", "BetterHealthChecks.Http\BetterHealthChecks.Http.csproj", "{2FC06923-F4BF-41D3-861C-7C997B327543}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterHealthChecks.Ignite", "BetterHealthChecks.Ignite\BetterHealthChecks.Ignite.csproj", "{7764F9F1-D6DC-4F47-9C23-05B5BA111FCE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{2FC06923-F4BF-41D3-861C-7C997B327543}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FC06923-F4BF-41D3-861C-7C997B327543}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FC06923-F4BF-41D3-861C-7C997B327543}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7764F9F1-D6DC-4F47-9C23-05B5BA111FCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7764F9F1-D6DC-4F47-9C23-05B5BA111FCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7764F9F1-D6DC-4F47-9C23-05B5BA111FCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7764F9F1-D6DC-4F47-9C23-05B5BA111FCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

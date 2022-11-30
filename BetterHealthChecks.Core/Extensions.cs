@@ -20,7 +20,7 @@ namespace BetterHealthChecks.Core
         {
             services.AddSingleton<IHealthCheckService, HealthCheckService>(x =>
             {
-                var healthCheckService = new HealthCheckService(x);
+                var healthCheckService = new HealthCheckService(x, calculateStatusCode);
                 var healthChecks = addHealthChecks(new List<IBetterHealthCheck>());
                 foreach (var healthCheck in healthChecks)
                 {
