@@ -3,10 +3,22 @@
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
         <Nullable>enable</Nullable>
+        <PackageTags>Health;Healthcheck;Check;Core;Better;BetterHealth;BetterHealthChecks;Http</PackageTags>
+        <Description>Ignite better healthchecks</Description>
+        <VersionPrefix>$(Version)</VersionPrefix>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/dvvislobokov/better-health-checks.git</PackageProjectUrl>
+        <Owners>Denis Vislobokov</Owners>
+        <Authors>Denis Vislobokov</Authors>
+        <Copyright>Copyright 2022</Copyright>
     </PropertyGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\BetterHealthChecks.Core\BetterHealthChecks.Core.csproj" />
+    <ItemGroup Condition="'$(BUILD_ENV)'=='nuget'">
+        <PackageReference Include="BetterHealthChecks.Core" Version="5.0.0"/>
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(BUILD_ENV)'==''">
+        <ProjectReference Include="..\BetterHealthChecks.Core\BetterHealthChecks.Core.csproj" />
     </ItemGroup>
 
     <ItemGroup>

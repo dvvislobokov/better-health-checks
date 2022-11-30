@@ -1,4 +1,0 @@
-#!/bin/bash
-dotnet restore $1
-dotnet build --version $2 -c Release $1
-dotnet pack $1 -o ./packs/$2/ /p:Version=$2
